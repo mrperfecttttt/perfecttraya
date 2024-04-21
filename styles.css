@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    margin: 0 auto;
+}
+
+.fullscreen-image {
+    background-image: url('img/test2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* Full height of viewport */
+    width: 100%;
+}
+
+.content {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.content-2 {
+    display: flex;
+    padding: 20px;
+    background-color: #f9f9f9;
+    justify-content: center;
+    /* Center horizontally */
+}
+
+.pantun {
+    margin-top: 50px;
+}
+
+.countdown {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.unit {
+    margin: 5px;
+    text-align: center;
+}
+
+.separator {
+    margin: 0 5px;
+    font-size: 1rem;
+    color: #e1bd69;
+}
+
+.countdown-number {
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.countdown-text {
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+.reveal {
+    position: relative;
+    transition: transform 1s ease, opacity 1s ease;
+    transform: scale(0.5, 0.5);
+    /* Initial scale to hide the element */
+    opacity: 0;
+}
+
+.reveal.active {
+    transform: scale(1, 1);
+    opacity: 1;
+}
+
+.rsvp-msg {
+    font-size: 15px;
+}
+
+.btn-rsvp {
+    width: calc(100% - 44px);
+    /* Adjust width for margin */
+    margin: 0 22px;
+    /* Add margin to the left and right */
+    display: inline-flex;
+    /* Use flexbox to center text */
+    justify-content: center;
+    /* Center text horizontally */
+    align-items: center;
+    /* Center text vertically */
+}
+
+.btn-ucapan {
+    width: calc(100% - 44px);
+    /* Adjust width for margin */
+    margin: 0 22px;
+    /* Add margin to the left and right */
+    display: inline-flex;
+    /* Use flexbox to center text */
+    justify-content: center;
+    /* Center text horizontally */
+    align-items: center;
+    /* Center text vertically */
+}
+
+.recept-box {
+    margin: 0 22px;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#ucapan,
+#rsvp {
+    display: inline-block;
+    padding: 10px 20px;
+    /* Change to your preferred background color */
+    color: black;
+    /* Change to your preferred text color */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 100px;
+    justify-content: center;
+}
+
+#ucapan:hover,
+#rsvp:hover {
+    background-color: #d5b875;
+}
+
+#ucapan span {
+    margin-right: 5px;
+}
+
+#rsvp span {
+    margin-right: 5px;
+}
+
+/* FOR UCAPAN MODAL */
+#nameInput,
+#wishesInput {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    /* Adjust as needed */
+    border: 1px solid #ccc;
+    /* Adjust border color as needed */
+    border-radius: 4px;
+    /* Adjust as needed */
+}
+
+.submit-btn,
+.submit-btn-rsvp {
+    color: black;
+    /* Adjust button text color as needed */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    /* Adjust as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Add smooth transition */
+}
+
+button[type="submit"] {
+    background-color: #64CD8A;
+    /* Green background color */
+    color: black;
+    /* White text color */
+    padding: 0.5rem 1rem;
+    /* Adjust padding as needed */
+    border: none;
+    /* Remove border */
+    border-radius: 0.25rem;
+    /* Add border radius */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    /* Grey background color */
+    color: #999;
+    /* Lighter text color */
+    cursor: not-allowed;
+    /* Change cursor to not-allowed */
+}
+
+.submit-btn:hover {
+    background-color: #A2E1B8;
+    /* Adjust hover background color as needed */
+}
+
+.submit-btn[disabled] {
+    pointer-events: none;
+    /* Disable pointer events */
+    opacity: 0.6;
+    /* Reduce opacity to indicate it's disabled */
+    cursor: not-allowed;
+    /* Change cursor to indicate it's not clickable */
+}
+
+.submit-btn-rsvp[disabled] {
+    pointer-events: none;
+    /* Disable pointer events */
+    opacity: 0.6;
+    /* Reduce opacity to indicate it's disabled */
+    cursor: not-allowed;
+    /* Change cursor to indicate it's not clickable */
+}
+
+input:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    /* Adjust the opacity as needed */
+}
+
+.input-container,
+.input-container-main {
+    position: relative;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-container input,
+.input-container-main input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.input-container textarea,
+.input-container-main textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.input-container label,
+.input-container-main label {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: #999;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-color: white;
+    /* Add background color for label */
+    padding: 0 5px;
+    /* Add padding to label */
+}
+
+.input-container input:focus+label,
+.input-container textarea:focus+label,
+.input-container input:not(:placeholder-shown)+label,
+.input-container textarea:not(:placeholder-shown)+label,
+.input-container-main input:focus+label,
+.input-container-main textarea:focus+label,
+.input-container-main input:not(:placeholder-shown)+label,
+.input-container-main textarea:not(:placeholder-shown)+label {
+    top: -10px;
+    /* Adjust the top position */
+    font-size: 12px;
+    color: #555;
+}
+
+/* SELECTION RSVP */
+.custom-select {
+    color: #64CD8A;
+    border: 1px solid black;
+}
+
+
+/* FONTTTTT */
+.dancing-script-normal {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.mate-sc-regular {
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.mate-sc-italic {
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+.mate-sc-italic-guest {
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 600;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.delius-regular {
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.delius-regular-normal {
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.alegreya-bold {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.alegreya-normal {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 100;
+    font-size: medium;
+}
+
+
+
+/* POPUPPPP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+
+
+
+.modal-index {
+    z-index: 2050;
+}
+
+
+/* FOR EDITTTT */
+.color-edit {
+    fill: rgba(225, 189, 105, 1)
+    ;
+}
+
+.color-text {
+    color: #e1bd69;
+}
+
+.btn-color {
+    background-color: #e1bd69;
+}
+
+.border-color {
+    border: solid 1px #e1bd69;
+}

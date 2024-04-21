@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        .pacifico-regular {
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('img/front.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            /* Prevents page content from showing outside the viewport */
+        }
+
+        .container {
+            text-align: center;
+            animation: zoomIn 0.5s ease forwards;
+            /* Animation for zoom in effect */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #e1bd69;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #f0deb4;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                /* Start from scale 0 */
+            }
+
+            to {
+                transform: scale(1);
+                /* End at normal scale (1) */
+            }
+        }
+
+        @keyframes zoomOut {
+            from {
+                transform: scale(1);
+                /* Start from normal scale (1) */
+            }
+
+            to {
+                transform: scale(0);
+                /* End at scale 0 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="pacifico-regular" onclick="redirectToMain()">Selamat Datang</button>
+    </div>
+
+    <script>
+        function redirectToMain() {
+            document.querySelector('.container').style.animation = "zoomOut 0.5s ease forwards"; // Apply zoom out animation
+            setTimeout(function () {
+                window.location.href = "page.php";
+            }, 500); // Adjust the time to match the animation duration
+        }
+    </script>
+</body>
+
+</html>
