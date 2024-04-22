@@ -1,8 +1,8 @@
 <?php
-$servername = "sql313.infinityfree.com"; 
-$username = "if0_36323276"; 
-$password = "zkV0nZGYXIuXRVp"; 
-$database = "if0_36323276_db_kakma"; 
+$servername = "db-perfecttraya-do-user-15631220-0.c.db.ondigitalocean.com"; 
+$username = "doadmin"; 
+$password = "AVNS_OftWmxoSd-XUnGm7B0z"; 
+$database = "db_syerah"; 
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
