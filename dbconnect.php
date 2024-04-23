@@ -1,8 +1,8 @@
 <?php
-$servername = "db-perfecttraya-do-user-15631220-0.c.db.ondigitalocean.com"; 
-$username = "doadmin"; 
-$password = "AVNS_OftWmxoSd-XUnGm7B0z"; 
-$database = "db_syerah"; 
+$servername = "localhost"; 
+$username = "mrperfectt"; 
+$password = "mRperfectt123a"; 
+$database = "db_testing"; 
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
